@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Andrew Violette, @aviolette/@chifoodtruckz on twitter"/>
+    <meta name="description" content="${description}"/>
+
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+
+    <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/img/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/img/apple-touch-icon-iphone-retina.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/img/apple-touch-icon-ipad-retina.png">
+    <title>Chicago Food Truck Finder</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <div class="container" id="foo">
+        <a class="navbar-brand" href="/"><img src="/img/logo.png" width="30" height="30" alt="">
+            <span class="d-none d-sm-inline d-md-inline d-lg-inline d-xl-inline">Chicago Food Truck Finder</span></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                <a class="nav-link" href="/"><span class="glyphicons glyphicons-electricity"></span>Activity</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"
+                    href="/trucks"><span class="glyphicons glyphicons-truck"></span>Trucks</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"
+                    href="/events"><span class="glyphicons glyphicons-calendar"></span>Events</a>
+                </li>
+                <li class="nav-item d-block d-md-none">
+                    <a href="/about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item d-block d-md-none">
+                    <a href="/integrations" class="nav-link">Integrations</a>
+                </li>
+                <li class="nav-item d-block d-md-none">
+                    <a class="nav-link" href="https://twitter.com/chifoodtruckz"
+                       title="twitter: @chifoodtruckz">@chifoodtruckz on twitter</a></li>
+            </ul>
+            <div class="navbar-nav flex-row ml-md-auto">
+                <li class="nav-item d-none d-md-block"><a href="/about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item d-none d-md-block"><a href="/integrations" class="nav-link">Integrations</a>
+                </li>
+                <li class="nav-item d-none d-md-block"><a class="nav-link"
+                                                          href="https://twitter.com/chifoodtruckz"
+                                                          title="twitter: @chifoodtruckz"><span
+                        class="social social-twitter"></span></a></li>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="container${suffix} cftf-main-container">
+
+    <noscript>
+        <div class="alert alert-error">
+            Javascript is required for this site to function properly.
+        </div>
+    </noscript>
+
+
+    <div class="row" id="sidebar">
+        <div class="col-md-12" id="listContainer">
+            <div id="motd" class="alert alert-success alert-dismissable d-none" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+                    &times;
+                </button>
+                <p id="motd-message"></p>
+            </div>
+            <div class="alert alert-info" id="flashMsg" style="display:none">
+            </div>
+            <div id="tab-section">
+                <ul class="nav nav-tabs" id="navTabs" role="tablist">
+                    <li class="nav-item"><a id="now-tab" data-toggle="tab" role="tab"
+                                            class="nav-link active" href="#nowTrucks">Open Now</a>
+                    </li>
+                    <li class="nav-item"><a id="later-tab" data-toggle="tab" role="tab"
+                                            class="nav-link" href="#laterTrucks">Open Later</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div id="nowTrucks" class="tab-pane fade active truckDL show" role="tabpanel">
+                    </div>
+                    <div id="laterTrucks" class="tab-pane fade truckDL" role="tabpanel">
+                    </div>
+                </div>
+            </div>
+            <div class="jumbotron d-none" id="notrucks">
+                <h1 class="display-4">There are No Trucks On The Road</h1>
+                <p>Check back at a later time.</p>
+            </div>
+        </div>
+    </div>
+
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
